@@ -5,4 +5,5 @@ public enum TokenClass {
 	leftPar, rightPar, comma,
 	mur, fantome, sortie, labyrinthe,
 	joueur, visibilite,
+	bouclier, porte, masse,
 }

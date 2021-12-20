@@ -62,6 +62,12 @@ public class AnalyseLexicale {
 						tokens.add(new Token(TokenClass.visibilite));
 					} else if (buf.equals("joueur")) {
 						tokens.add(new Token(TokenClass.joueur));
+					} else if (buf.equals("bouclier")) {
+						tokens.add(new Token(TokenClass.bouclier));
+					} else if (buf.equals("porte")) {
+						tokens.add(new Token(TokenClass.porte));
+					} else if (buf.equals("masse")) {
+						tokens.add(new Token(TokenClass.masse));
 					} else {
 						System.out.println("le token " + buf + " n'existe pas");
 						throw new UnexistingTokenException("le token " + buf + " n'existe pas");

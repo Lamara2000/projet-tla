@@ -82,7 +82,9 @@ public class AnalyseSyntaxique {
 	private Node L() throws UnexpectedTokenException {
 		if(getTokenClass() == TokenClass.labyrinthe) {
 			getToken();
-			return P();		
+			Node l = new Node(NodeClass.labyrinthe);
+			l.append(P());
+			return l;		
 		}
 		else {
 			throw new UnexpectedTokenException("'labyrnthe' attendu");

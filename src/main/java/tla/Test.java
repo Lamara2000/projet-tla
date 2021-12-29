@@ -2,6 +2,8 @@ package tla;
 
 import java.util.List;
 
+import game.Level;
+
 public class Test {
 
 	private static void testLexer(String entree) {
@@ -16,7 +18,7 @@ public class Test {
 		}
 	}
 	
-	public static void testParser(String entree) {
+	public static Level testParser(String entree) {
 		try {
 			System.out.println("début d'analyse lexicale");
 			List<Token> tokens = AnalyseLexicale.analyse(entree);
@@ -28,14 +30,18 @@ public class Test {
 			Node root = new AnalyseSyntaxique().analyse(tokens);
 			dumpNode(root, 0);
 			System.out.println("fin d'analyse syntaxique");
+			Interpreteur i = new Interpreteur();
+			i.interpreter(root, null);
+			return i.getLevel();
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
 		}
+		return null;
 	}
 	
 	public static void main(String[] args) {
 		//testLexer("labyrinthe(12,12) mur(1,0) joueur(0,0)");
-		testParser("labyrinthe(12,12) mur(1,0)(4,5)(7,9) joueur(0,0) sortie(7,8) fantome(1,2)(4,7)(2,8) masse 4 (0,6) bouclier 5 (1,8)");
+		//testParser("labyrinthe(12,12) mur(1,0)");//(4,5)(7,9) joueur(0,0) sortie(7,8) fantome(1,2)(4,7)(2,8) masse 4 (0,6) bouclier 5 (1,8)");
 	}
 	
 	static void dumpNode(Node n, int depth) {

@@ -2,7 +2,7 @@ package game;
 
 import java.util.ArrayList;
 
-public class Level2 implements Level {
+public class Level2 {
     public char[] getWalls() {
         String s =
             "     #       #      " +

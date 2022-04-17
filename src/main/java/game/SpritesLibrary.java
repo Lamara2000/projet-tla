@@ -18,6 +18,9 @@ public class SpritesLibrary {
     static final Image imgWall = new Image(SpritesLibrary.class.getResourceAsStream("/block_05.png"), Game.TILE_SIZE, Game.TILE_SIZE, true, false);
     static final Image imgExit = new Image(SpritesLibrary.class.getResourceAsStream("/crate_30.png"), Game.TILE_SIZE, Game.TILE_SIZE, true, false);
     static final Image imgTile = generateImage(Color.gray(0.92), Color.gray(0.96));
+    static final Image imgBouclier = new Image(SpritesLibrary.class.getResourceAsStream("/bouclier.png"), Game.TILE_SIZE, Game.TILE_SIZE, true, false);
+    static final Image imgPorte = new Image(SpritesLibrary.class.getResourceAsStream("/porte.png"), Game.TILE_SIZE, Game.TILE_SIZE, true, false);
+    static final Image imgMasse = new Image(SpritesLibrary.class.getResourceAsStream("/masse.png"), Game.TILE_SIZE, Game.TILE_SIZE, true, false);
 
     static Image generateImage(Color mainColor, Color borderColor) {
         WritableImage img = new WritableImage(Game.TILE_SIZE, Game.TILE_SIZE);
